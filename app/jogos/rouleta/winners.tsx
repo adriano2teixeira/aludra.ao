@@ -17,15 +17,14 @@ const emailFont = Roboto_Mono({
 export const LastWinners = () => {
     const { usr: user, isLoading } = useAuth()
    
-
     const onEnSession = () => signOut(auth)
 
     return (
         <div>
             {user && <div className="flex flex-row items-center justify-between">
-                <img src={user?.avatar} className="rounded-full w-10 h-10" />
+                <img src={user?.photoURL} className="rounded-full w-10 h-10" />
                 <div className="ml-4">
-                    <h3 className="text-white text-md leading-4" style={nameFont.style}>{user.name}</h3>
+                    <h3 className="text-white text-md leading-4" style={nameFont.style}>{user.displayName}</h3>
                     <h4 className="text-gray-300 text-sm leading-7" style={emailFont.style}>{user.email}</h4>
                 </div>
             </div>}
